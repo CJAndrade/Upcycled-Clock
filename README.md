@@ -30,19 +30,19 @@ To power the Intel Edison I am using the power adapter that came in as part of t
 Flash the latest Yacto image on the Intel Edison , follow the guide on the Intel website - https://software.intel.com/en-us/flashing-firmware-on-your-intel-edison-board-linux
 
 Once done,run the following commands on the edison to get the latest version of MRAA library and UPM
-    
+
     echo "src mraa-upm http://iotdk.intel.com/repos/3.5/intelgalactic" > /etc/opkg/mraa-upm.conf
     $opkg update
     $opkg install mraa
     $opkg install upm
 Intall pip to install the other packages required
-   
+
     $opkg install python-pip
 
 Install pyOWM which is a python wrapper for the OpenWeatherMap.org API
 
     $pip install pyowm
-    
+
 For twitter, install tweepy which is a python wrapper for the twitter API
 
     $pip install tweepy
@@ -57,8 +57,8 @@ and create the asound.conf file in the /etc folder
 
     $vi /etc/asound.conf
 and add the line
-pcm.!default sysdefault:Device 
-to test the sound on 
+pcm.!default sysdefault:Device
+to test the sound on
 
     $aplay /usr/share/sounds/alsa/Front_Center.wav
 
@@ -73,9 +73,12 @@ If you plan to implement all the features install git to clone the repository, o
 
     $opkg install git
 
-*To autorun the python program for each of the feature using systemd, checkout the instruction in each of the feature folders above.*
+*To autorun the python program for each of the feature using systemd, checkout the instruction in each of the feature folders above. And also install the following*
 
-### Getting the API keys 
+    $pip install schedule
+    $opkg install subversion
+
+### Getting the API keys
 
 Update the respective python files with the keys
 
@@ -83,4 +86,3 @@ Update the respective python files with the keys
 - Twitter –twitter_message.py -  https://dev.twitter.com/
 - Google Matrix API –traffic_condition.py – https://developers.google.com/maps/documentation/distance-matrix/start
 - Cayenne MQTT details – UploadSensorDataToCayenne.py – https://github.com/myDevicesIoT/Cayenne-MQTT-Python
-
