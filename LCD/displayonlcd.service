@@ -1,0 +1,9 @@
+#!/bin/sh
+[Unit]
+Description=Display on Grove LCD
+[Service]
+ExecStart=/usr/bin/python /home/root/Upcycled-Clock/LCD/displayonLCD.py
+StandardOutput=null
+[Install]
+WantedBy=basic.target
+Alias=displayonlcd.service

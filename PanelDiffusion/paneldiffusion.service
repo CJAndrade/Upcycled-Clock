@@ -1,0 +1,9 @@
+#!/bin/sh
+[Unit]
+Description=Panel diffusion on the clock
+[Service]
+ExecStart=/usr/bin/python /home/root/Upcycled-Clock/PanelDiffusion/panel_schedule.py
+StandardOutput=null
+[Install]
+WantedBy=basic.target
+Alias=paneldiffusion.service
