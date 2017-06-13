@@ -1,0 +1,9 @@
+#!/bin/sh
+[Unit]
+Description=once MQTT message open is recived readout on speaker
+[Service]
+ExecStart=/usr/bin/python /home/root/Upcycled-Clock/doorMQTT/door_subscribe.py
+StandardOutput=null
+[Install]
+WantedBy=basic.target
+Alias=readoutdoor.service
